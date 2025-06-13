@@ -1,0 +1,88 @@
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.statCard {
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.statCard:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.statCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: #86bc25;
+  transition: width 0.3s ease;
+}
+
+.statCard.accent::before {
+  background: #00a0b0;
+}
+
+.statCard.orange::before {
+  background: #ff6b35;
+}
+
+.statCard.success::before {
+  background: #10b981;
+}
+
+.statCard:hover::before {
+  width: 8px;
+}
+
+.statIcon {
+  background: rgba(134, 188, 37, 0.1);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  width: fit-content;
+  margin-bottom: 1rem;
+  color: #86bc25;
+}
+
+.statCard.accent .statIcon {
+  background: rgba(0, 160, 176, 0.1);
+  color: #00a0b0;
+}
+
+.statCard.orange .statIcon {
+  background: rgba(255, 107, 53, 0.1);
+  color: #ff6b35;
+}
+
+.statCard.success .statIcon {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+}
+
+.statValue {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1f2937;
+  margin: 0 0 0.25rem 0;
+}
+
+.statLabel {
+  color: #6b7280;
+  font-weight: 500;
+  margin: 0;
+}
